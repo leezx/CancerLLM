@@ -4,7 +4,7 @@ Cancer LLM platform for target discovery and drug development
 # Software
 - MacMini
 - Docker
-- AWS CLI `aws --version`
+- AWS CLI
 
 ```
 sudo installer -pkg AWSCLIV2.pkg -target /
@@ -35,8 +35,9 @@ micromamba create -y -n biomni_e1 -f biomni.environment.yml # use micromamba, no
 micromamba activate biomni_e1
 ```
 
-# don't use mirrors.ustc.edu.cn, no response. Use mirrors.tuna.tsinghua.edu.cn. 2025-Aug-26
+
 ```
+# Don't use mirrors.ustc.edu.cn, no response. Use mirrors.tuna.tsinghua.edu.cn. 2025-Aug-26
 channels:
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
