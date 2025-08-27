@@ -33,8 +33,31 @@ vi biomni.environment.yml # modify the channels
 micromamba create -y -n biomni_e1 -f biomni.environment.yml # use micromamba, no conda pre-installed
 
 micromamba activate biomni_e1
+
+# download files [will delete this later]
+from biomni.agent import A1
+# Initialize the agent with data path, Data lake will be automatically downloaded on first run (~11GB)
+agent = A1(path='./data', llm='claude-sonnet-4-20250514')
+# Execute biomedical tasks using natural language
+agent.go("Plan a CRISPR screen to identify genes that regulate T cell exhaustion, generate 32 genes that maximize the perturbation effect.")
+
+exit
+
+docker commit biomni-debug biomni-image:latest
 ```
 
+modify `docker-compose.yml`, then start `docker compose up -d`, open http://localhost/web/index.html 
+```
+services:
+  biomni:
+    image: biomni-image:latest
+    container_name: biomni
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/data
+```
 
 ```
 # Don't use mirrors.ustc.edu.cn, no response. Use mirrors.tuna.tsinghua.edu.cn. 2025-Aug-26
@@ -42,4 +65,9 @@ channels:
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+```
+
+# Debug
+```
+docker ps
 ```
