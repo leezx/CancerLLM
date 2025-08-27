@@ -69,5 +69,18 @@ channels:
 
 # Debug
 ```
+# check if docker is running
 docker ps
+
+# go into the running docker image, check if the local biomin is running correctly.
+docker exec -it biomni bash
+micromamba activate biomni_e1
+python # be aware of the location of data folder
+
+from biomni.agent import A1
+# Initialize the agent with data path, Data lake will be automatically downloaded on first run (~11GB)
+agent = A1(path='./data', llm='claude-sonnet-4-20250514')
 ```
+
+
+
