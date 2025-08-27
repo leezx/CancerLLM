@@ -98,3 +98,10 @@ curl http://host.docker.internal:11434/api/generate -d '{
   "model": "llama2",
   "prompt": "Hello from Biomni!"
 }'
+
+```
+conda activate biomni_e1
+
+# pip install git+https://github.com/leezx/Biomni.git@local_ollama
+pip install --force-reinstall git+https://github.com/leezx/Biomni.git@local_ollama
+```
