@@ -80,7 +80,21 @@ python # be aware of the location of data folder
 from biomni.agent import A1
 # Initialize the agent with data path, Data lake will be automatically downloaded on first run (~11GB)
 agent = A1(path='./data', llm='claude-sonnet-4-20250514')
+agent = A1(path='./data', llm='llama2', source="Ollama", base_url="http://host.docker.internal:11434/v1")
+
+agent.go("Predict ADMET properties for this compound: CC(C)CC1=CC=C(C=C1)C(C)C(=O)O")
 ```
 
+Start: ./start.sh
+Stop: docker stop biomni nginx
+View logs: docker logs biomni
 
+curl http://localhost:11434/api/generate -d '{
+  "model": "llama2",
+  "prompt": "Hello from Biomni!"
+}'
 
+curl http://host.docker.internal:11434/api/generate -d '{
+  "model": "llama2",
+  "prompt": "Hello from Biomni!"
+}'
