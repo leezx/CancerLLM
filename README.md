@@ -1,6 +1,8 @@
 # CancerLLM
 Cancer LLM platform for target discovery and drug development
 
+`All that is known can be spoken clearly by LLM; all that is unknown must be established by experiment and data.`
+
 # Software
 - MacMini
 - Docker
