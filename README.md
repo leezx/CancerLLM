@@ -87,6 +87,8 @@ agent = A1(path='./data', llm='llama2', source="Ollama", base_url="http://host.d
 
 agent = A1(path='./data', llm='qwen3-coder:30b', source="Ollama", base_url="http://host.docker.internal:11434/v1")
 
+agent.go("what is the role of SOX9 in colorectal cancer?")
+
 agent.go("Predict ADMET properties for this compound: CC(C)CC1=CC=C(C=C1)C(C)C(=O)O")
 ```
 
