@@ -43,3 +43,35 @@ Results: We demonstrate that SRY-box transcription factor 9 (SOX9) promotes CRC 
 
 Conclusions: These studies establish SOX9 as a central regulator of an enhancer-driven stem cell-like program and carry important implications for developing therapeutics directed at overcoming differentiation defects in CRC. 
 """
+
+------------
+
+You are a biomedical data normalization assistant.
+
+Task: Normalize the first two columns (Target and Action) of the following CSV.
+
+Rules:
+1. Target:
+   - Always extract only the canonical gene/protein name.
+   - Remove any prefixes or experimental manipulations such as "Disrupting", "Knockdown", "Loss-of-function", etc.
+2. Action:
+   - Only use "promote" or "inhibit".
+   - Map other verbs as follows:
+       - "activate", "support", "enhance", "up-regulate", "promotes", "activates", "supports" → "promote"
+       - "hinders", "impairs", "inhibits", "reduces", "suppresses" → "inhibit"
+   - If the original Target contains a disrupting/knockdown/loss-of-function word, **flip the Action**:
+       - "promote" → "inhibit"
+       - "inhibit" → "promote"
+3. Keep Phenotype and Disease columns unchanged.
+4. Output the result in **CSV format with double quotes**, nothing else, no explanations.
+
+Input CSV:
+"Target","Action","Phenotype","Disease"
+"SOX9","promote","stem cell activity","colorectal cancer"
+"SOX9","inhibit","intestinal differentiation","colorectal cancer"
+"Disrupting SOX9 activity","inhibit","tumor growth","colorectal cancer"
+"SOX9","activate","Paneth and stem cell activity","colorectal cancer"
+"PROM1","support","stem cell signaling","colorectal cancer"
+"SOX9","promote","CRC","colorectal cancer"
+"SOX9","inhibit","differentiation","colorectal cancer"
+"SOX9","activate","stem cell-like program","colorectal cancer"
