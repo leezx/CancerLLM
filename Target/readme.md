@@ -26,7 +26,7 @@ now my gene X is SOX9 and my cancer type is colorectal cancer.
 2. 默认是肿瘤细胞和蛋白靶点；【以后可以靶向TME何其他类型靶点】;
 3. 确定causal的cancer表型，growth、proliferation、invasion、angiogenesis、cell death;
 4. 把所有的evidence列成一个表格，利用所有证据来判断这个causality score；【分几种：压根就没有证据、证据不足、有证据oncogene、有证据TSG】
-5. 文献PDF全文阅读，提取出最全面、真实的statement、evidence、evidence type等；
+5. 【初期可选】文献PDF全文阅读，提取出最全面、真实的statement、evidence、evidence type等；
 6. evidence，核心属性：年份、杂志、影响因子、证据类型、证据说服力、影响的表型、促进还是抑制；
 7. 构建打分模型，核心变量：证据的类型、质量、多少个独立的证据、促癌还是抑癌;
 
