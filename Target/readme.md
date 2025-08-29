@@ -7,10 +7,10 @@ Target Evaluation Framework
 now my gene X is SOX9 and my cancer type is colorectal cancer.
 
 1. Biological Rationale
-	•	Role in disease biology: What is the mechanistic role of gene X in cancer Y?
-	•	Causality: Is there evidence for a causal relationship between X and tumor initiation, progression, or metastasis? What experimental or clinical data support this?
-	•	Functional classification: Is X an oncogene, tumor suppressor, or context-dependent regulator?
-	•	Subtype specificity: Is dependency on X restricted to specific molecular or histological subtypes? How reproducible is this finding across datasets (TCGA, DepMap, CRISPR screens)?
+- Causality: Is there evidence for a causal relationship between X and tumor initiation, progression, or metastasis? What experimental or clinical data support this?
+- Functional classification: Is X an oncogene, tumor suppressor, or context-dependent regulator?
+- Subtype specificity: Is dependency on X restricted to specific molecular or histological subtypes? How reproducible is this finding across datasets (TCGA, DepMap, CRISPR screens)?
+- Role in disease biology: What is the mechanistic role of gene X in cancer Y?
 
 ⸻
 
