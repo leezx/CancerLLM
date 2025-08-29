@@ -46,14 +46,16 @@ Conclusions: These studies establish SOX9 as a central regulator of an enhancer-
 
 ------------
 
-You are a biomedical data normalization assistant.
+You are a biomedical text mining assistant.
 
-Task: Normalize the first two columns (Target and Action) of the following CSV.
+Task: Normalize the first three columns (Target, Action, Phenotype) and generate a fourth column (MainPhenotype) based on standard categories.
 
 Rules:
+
 1. Target:
-   - Always extract only the canonical gene/protein name.
+   - Extract only the canonical gene/protein/biomarker name.
    - Remove any prefixes or experimental manipulations such as "Disrupting", "Knockdown", "Loss-of-function", etc.
+
 2. Action:
    - Only use "promote" or "inhibit".
    - Map other verbs as follows:
@@ -62,8 +64,19 @@ Rules:
    - If the original Target contains a disrupting/knockdown/loss-of-function word, **flip the Action**:
        - "promote" → "inhibit"
        - "inhibit" → "promote"
-3. Keep Phenotype and Disease columns unchanged.
-4. Output the result in **CSV format with double quotes**, nothing else, no explanations.
+
+3. Phenotype:
+   - Keep the original extracted phenotype text in the third column.
+   - Generate a fourth column **MainPhenotype**, mapping the third column to one of these standard categories:
+     ```
+     proliferation, apoptosis, invasion, migration, stem cell activity, differentiation, metastasis, survival, tumor growth
+     ```
+   - If the phenotype cannot be confidently mapped, write "Others".
+
+4. Output format:
+   - CSV with double quotes, exactly four columns: Target, Action, Phenotype, MainPhenotype, Disease.
+   - Do not output explanations or other text.
+   - Keep Disease column unchanged.
 
 Input CSV:
 "Target","Action","Phenotype","Disease"
